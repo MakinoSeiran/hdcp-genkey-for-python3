@@ -20,7 +20,7 @@ This repository contains an updated version of the original HDCP key generator s
 - Fixed all string operations for Python 3.13+ compatibility
 - Maintained full backward compatibility with original functionality
 
-###How It Works
+## How It Works
 HDCP uses a master key matrix to generate unique device keys:
 
 Source Key Generation: Selects 20 rows from the master matrix based on the KSV's 1-bits, then adds them together
@@ -34,9 +34,9 @@ The shared secret between source and sink is computed by adding selected key com
 ## Prerequisites
 
 - Python 3.13 or higher
-- A valid `master-key.txt` file (not included)
+- A valid `master-key.txt` file
 
-##Usage: generate_key.py [options]
+## Usage: generate_key_py3.py [options]
 
 Options:
   -h, --help            show this help message and exit
