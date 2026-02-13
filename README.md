@@ -1,10 +1,42 @@
-# HDCP Key Generation Example
+# HDCP Key Generator
 
-This script implements a simple version of the HDCP key generation algorithm in
-Python using the leaked HDCP master key (which is located in master-key.txt).
+A Python tool for generating HDCP (High-bandwidth Digital Content Protection) source and sink keys.
 
-```
-Usage: generate_key.py [options]
+## Original Author
+
+Rich Wareham <richwareham@gmail.com> (2010)
+
+## Python 3.13+ Compatibility Update
+
+This repository contains an updated version of the original HDCP key generator script, modified to work with Python 3.13 and above.
+
+**Update by:** MakinoSeiran (https://github.com/MakinoSeiran)
+
+### What's Changed
+
+- Removed deprecated `string` module usage
+- Replaced `string.split()` with modern `str.split()` method
+- Replaced `string.join()` with `str.join()` method
+- Fixed all string operations for Python 3.13+ compatibility
+- Maintained full backward compatibility with original functionality
+
+###How It Works
+HDCP uses a master key matrix to generate unique device keys:
+
+Source Key Generation: Selects 20 rows from the master matrix based on the KSV's 1-bits, then adds them together
+
+Sink Key Generation: Same process but uses the transposed master matrix
+
+KSV (Key Selection Vector): A 40-bit number with exactly 20 ones and 20 zeros
+
+The shared secret between source and sink is computed by adding selected key components based on the partner's KSV.
+
+## Prerequisites
+
+- Python 3.13 or higher
+- A valid `master-key.txt` file (not included)
+
+##Usage: generate_key.py [options]
 
 Options:
   -h, --help            show this help message and exit
@@ -16,7 +48,7 @@ Options:
   -t, --test            generate source and sink keys and test they work
 ```
 
-Examples:
+##Examples:
 
 ```bash
 # Generate a sink key with KSV 0x54f0af39a8 and output the result in JSON
