@@ -59,6 +59,6 @@ Options:
 ./generate_key_py3.py
 
 # Run a self-test to make sure the source a sink key generation is consistent
-./generate_key_py3.py
+./generate_key_py3.py -t
 ```
 
