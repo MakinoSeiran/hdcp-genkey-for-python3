@@ -52,13 +52,13 @@ Options:
 
 ```bash
 # Generate a sink key with KSV 0x54f0af39a8 and output the result in JSON
-./generate_key.py -k --ksv 54f0af39a8 -j
+./generate_key_py3.py -k --ksv 54f0af39a8 -j
 
 # Generate a source key with a random KSV and output the result in a 
 # human-readable form
-./generate_key.py
+./generate_key_py3.py
 
 # Run a self-test to make sure the source a sink key generation is consistent
-./generate_key.py -t
+./generate_key_py3.py
 ```
 
